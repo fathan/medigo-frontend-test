@@ -1,0 +1,12 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: $medigo-white;
+  font-family: $font-poppins;
+}
+
+.no--padding {
+  padding: 0!important;
+}

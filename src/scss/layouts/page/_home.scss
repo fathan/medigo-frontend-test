@@ -1,0 +1,78 @@
+.home-page {
+  background-color: $medigo-green-light-second;
+  height: 100%;
+  padding: 15px;
+
+  &__logo {
+    height: 80px;
+    background: url(https://medigo.id/images/logo-color.svg) no-repeat;
+    background-size: 90px 70px;
+  }
+
+  &__information-top {
+    display: inline-block;
+    font-family: $font-poppins;
+
+    .title {
+      font-size: 1.3em;
+      color: $medigo-green-dark;
+      margin-bottom: 5px;
+      font-weight: 400
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: $medigo-grey-dark;
+      margin-bottom: 25px;
+      font-weight: 300
+    }
+  }
+
+  &__box-search-home {
+    display: inline-block;
+    width: 100%;
+
+    .list-box {
+      background-color: $medigo-white;
+      padding: 15px;
+      border-radius: 7px;
+      font-family: $font-poppins;
+      margin-bottom: 10px;
+      @extend .inh-box-shadow;
+
+      &__image {
+        display: block;
+
+        img {
+          display: block;
+          width: 50px;
+        }
+      }
+
+      &__title {
+        font-size: 15px;
+        font-weight: 400;
+        color: $medigo-green-dark;
+        line-height: 30px;
+      }
+
+      &__subtitle {
+        font-size: 12px;
+        font-weight: 300;
+        color: $medigo-grey-dark;
+      }
+
+      &__arrow-right {
+        display: block;
+
+        span {
+          float: right;
+          right: 0;
+          font-size: 25px;
+          margin-top: 10px;
+          color: $medigo-grey-medium;
+        }
+      }
+    }
+  }
+}

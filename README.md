@@ -1,4 +1,4 @@
-# medigo-frontend-test
+# Medigo Frontend Developer Testing
 
 ## Project setup
 ```

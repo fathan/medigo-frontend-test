@@ -27,59 +27,68 @@ const mutations = {
 }
 
 const actions = {
-  _xhrHospitalList () {
-    return new Promise((resolve, reject) => {
-      const options = {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+  _xhrHospitalList ({ commit }) {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json'
       }
-      const page = 1
+    }
+    const page = 1
 
-      axios.get(`${ENV.API_URL}/health-center?page=${page}`, options)
-        .then(
-          response => resolve(response)
-        )
-        .catch(
-          error => reject(error)
-        )
-    })
-  },
-  _xhrHospitalSearch () {
-    return new Promise((resolve, reject) => {
-      const options = {
-        headers: {
-          'Content-Type': 'application/json'
+    axios.get(`${ENV.API_URL}/health-center?page=${page}`, options)
+      .then(
+        response => {
+          console.log(response)
+          commit(mutationType.HOSPITALS, response.data)
         }
+      )
+      .catch(
+        error => {
+          console.log(error)
+        }
+      )
+  },
+  _xhrHospitalSearch ({ commit }, data) {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json'
       }
-      const page = 1
-      const keyword = 'Panti'
+    }
+    const page = 1
+    const keyword = data
 
-      axios.get(`${ENV.API_URL}/health-center?search=${keyword}&page=${page}`, options)
-        .then(
-          response => resolve(response)
-        )
-        .catch(
-          error => reject(error)
-        )
-    })
-  },
-  _xhrHospitalDetail () {
-    return new Promise((resolve, reject) => {
-      const options = {
-        headers: {
-          'Content-Type': 'application/json'
+    axios.get(`${ENV.API_URL}/health-center?search=${keyword}&page=${page}`, options)
+      .then(
+        response => {
+          console.log(response)
+          commit(mutationType.HOSPITAL_SEARCH_RESULT, response.data)
         }
+      )
+      .catch(
+        error => {
+          console.log(error)
+        }
+      )
+  },
+  _xhrHospitalDetail ({ commit }, data) {
+    const options = {
+      headers: {
+        'Content-Type': 'application/json'
       }
-      const id = 1
-      axios.get(`${ENV.API_URL}/health-center/${id}`, options)
-        .then(
-          response => resolve(response)
-        )
-        .catch(
-          error => reject(error)
-        )
-    })
+    }
+    const id = data
+    axios.get(`${ENV.API_URL}/health-center/${id}`, options)
+      .then(
+        response => {
+          console.log(response)
+          commit(mutationType.HOSPITAL, response.data)
+        }
+      )
+      .catch(
+        error => {
+          console.log(error)
+        }
+      )
   }
 }
 
