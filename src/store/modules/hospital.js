@@ -32,49 +32,55 @@ const actions = {
    * @description : Get All Hospital List
    */
   _xhrHospitalList ({ commit }) {
-    const options = {
-      headers: {
-        'Content-Type': 'application/json'
+    return new Promise((resolve, reject) => {
+      const options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
-    }
-    const page = 1
+      const page = 1
 
-    axios.get(`${ENV.API_URL}/health-center?page=${page}`, options)
-      .then(
-        response => {
-          commit(mutationType.HOSPITALS, response.data)
-        }
-      )
-      .catch(
-        error => {
-          console.log(error)
-        }
-      )
+      axios.get(`${ENV.API_URL}/health-center?page=${page}`, options)
+        .then(
+          response => {
+            resolve(response)
+            commit(mutationType.HOSPITALS, response.data)
+          }
+        )
+        .catch(
+          error => {
+            console.log(error)
+          }
+        )
+    })
   },
   /**
    * @method : GET
    * @description : Get All Hospital List By Keyword Searching
    */
   _xhrHospitalSearch ({ commit }, data) {
-    const options = {
-      headers: {
-        'Content-Type': 'application/json'
+    return new Promise((resolve, reject) => {
+      const options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
-    }
-    const page = 1
-    const keyword = data
+      const page = 1
+      const keyword = data
 
-    axios.get(`${ENV.API_URL}/health-center?search=${keyword}&page=${page}`, options)
-      .then(
-        response => {
-          commit(mutationType.HOSPITAL_SEARCH_RESULT, response.data)
-        }
-      )
-      .catch(
-        error => {
-          console.log(error)
-        }
-      )
+      axios.get(`${ENV.API_URL}/health-center?search=${keyword}&page=${page}`, options)
+        .then(
+          response => {
+            resolve(response)
+            commit(mutationType.HOSPITAL_SEARCH_RESULT, response.data)
+          }
+        )
+        .catch(
+          error => {
+            console.log(error)
+          }
+        )
+    })
   },
   /**
    * @method : GET

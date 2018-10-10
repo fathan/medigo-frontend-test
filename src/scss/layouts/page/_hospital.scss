@@ -96,6 +96,19 @@
       }
     }
   }
+
+  &__input-search-section {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    padding-top: 0;
+    margin-top: 75px;
+    background-color: #FFF;
+
+    .form-control {
+      font-size: 0.7rem;
+    }
+  }
 }
 
 .box-list-hospital {

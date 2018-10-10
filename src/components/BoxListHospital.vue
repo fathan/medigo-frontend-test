@@ -4,6 +4,7 @@
       class="box-list-hospital__list"
       v-for="h in hospitals"
       :key="h.id"
+      @click="detailHospital(h.id)"
     >
       <div class="info-header">
         <div class="pull--left">
@@ -62,6 +63,13 @@ export default {
   props: {
     hospitals: {
       type: Array
+    }
+  },
+  methods: {
+    detailHospital (id) {
+      this.$router.push({
+        path: `/hospital/${id}`
+      })
     }
   }
 }

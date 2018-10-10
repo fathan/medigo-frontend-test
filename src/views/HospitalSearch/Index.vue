@@ -1,25 +1,25 @@
 <template>
-  <div>
-    <h1>Hospital Search</h1>
-    <pre>{{ hospitalSearchResults }}</pre>
+  <div class="height--full">
+    <header-top-input-search></header-top-input-search>
+    <box-list-hospital
+      :hospitals="hospitalSearchResults"
+    ></box-list-hospital>
   </div>
 </template>
 
 <script>
+import HeaderTopInputSearch from '@/components/HeaderTopInputSearch'
+import BoxListHospital from '@/components/BoxListHospital'
+
 export default {
+  components: {
+    HeaderTopInputSearch,
+    BoxListHospital
+  },
   computed: {
     hospitalSearchResults () {
       return this.$store.getters.hospitalSearchResults
     }
-  },
-  methods: {
-    getSearchHospital () {
-      let keyword = 'Per'
-      this.$store.dispatch('_xhrHospitalSearch', keyword)
-    }
-  },
-  mounted () {
-    this.getSearchHospital()
   }
 }
 </script>

@@ -8,17 +8,25 @@
     <box-list-hospital
       :hospitals="hospitals"
     ></box-list-hospital>
+    <loading-screen v-if="loading"></loading-screen>
   </div>
 </template>
 
 <script>
 import HeaderTopSearch from '@/components/HeaderTopSearch'
 import BoxListHospital from '@/components/BoxListHospital'
+import LoadingScreen from '@/components/LoadingScreen'
 
 export default {
   components: {
     HeaderTopSearch,
-    BoxListHospital
+    BoxListHospital,
+    LoadingScreen
+  },
+  data () {
+    return {
+      loading: false,
+    }
   },
   computed: {
     hospitals () {
@@ -27,7 +35,13 @@ export default {
   },
   methods: {
     getAllHospital () {
+      this.loading = true
       this.$store.dispatch('_xhrHospitalList')
+        .then(
+          response => {
+            this.loading = false
+          }
+        )
     },
     showAll () {
       alert('Lihat semua')

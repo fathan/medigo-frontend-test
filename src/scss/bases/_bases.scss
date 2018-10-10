@@ -7,6 +7,10 @@ body {
   font-family: $font-poppins;
 }
 
+a {
+  text-decoration: none!important;
+}
+
 .no--padding {
   padding: 0!important;
 }
@@ -25,4 +29,38 @@ body {
 
 .box--shadow {
   @extend .inh-box-shadow;
+}
+
+.loading--screen {
+  position: fixed;
+  z-index: 999;
+  background: #FFF;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    display: block;
+    text-align: center;
+
+    img {
+      display: inline-block;
+    }
+
+    span {
+      font-size: 0.8em;
+      color: #CCC;
+    }
+  }
 }
