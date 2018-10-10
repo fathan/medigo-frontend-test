@@ -5,6 +5,7 @@ import store from './store/index'
 import './registerServiceWorker'
 
 import './plugins/vue-bootstrap'
+import './plugins/vue-fontawesome'
 
 Vue.config.productionTip = false
 

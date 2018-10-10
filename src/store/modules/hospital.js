@@ -27,6 +27,10 @@ const mutations = {
 }
 
 const actions = {
+  /**
+   * @method : GET
+   * @description : Get All Hospital List
+   */
   _xhrHospitalList ({ commit }) {
     const options = {
       headers: {
@@ -48,6 +52,10 @@ const actions = {
         }
       )
   },
+  /**
+   * @method : GET
+   * @description : Get All Hospital List By Keyword Searching
+   */
   _xhrHospitalSearch ({ commit }, data) {
     const options = {
       headers: {
@@ -70,6 +78,10 @@ const actions = {
         }
       )
   },
+  /**
+   * @method : GET
+   * @description : Get Detail Hospital Order By ID
+   */
   _xhrHospitalDetail ({ commit }, data) {
     const options = {
       headers: {

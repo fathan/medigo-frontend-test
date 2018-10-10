@@ -1,0 +1,200 @@
+.header-top {
+  display: inline-block;
+  width: 100%;
+  font-family: $font-poppins;
+  @extend .inh-box-shadow;
+
+  &__first-section {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    position: fixed;
+    background-color: #FFF;
+
+    .back-button {
+      display: inline-block;
+      float: left;
+      width: 50px;
+      color: $medigo-grey-medium;
+    }
+
+    .select-city {
+      display: inline-block;
+      float: left;
+      width: 200px;
+
+      &__title {
+        font-size: 12px;
+        color: $medigo-grey-medium;
+      }
+
+      &__dropdown {
+        display: block;
+
+        .btn-secondary {
+          color: #027994;
+          background-color: #ffffff;
+          border-color: #ffffff;
+          padding: 0;
+          font-size: 12px;
+        }
+
+        .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+          color: #027994;
+          background-color: transparent;
+          border-color: transparent;
+        }
+
+        .dropdown-menu {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .search-button {
+      float: right;
+      right: 0;
+      font-size: 18px;
+      color: $medigo-green-dark;
+    }
+  }
+
+  &__second-section {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    padding-top: 0;
+    margin-top: 75px;
+    background-color: #FFF;
+
+    ul {
+      padding-left: 0;
+
+      li {
+        width: 31.3333%;
+        list-style-type: none;
+        float: left;
+        background-color: transparent;
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-size: 10px;
+        font-weight: 400;
+        color: $medigo-grey-medium;
+        border: 1px solid $medigo-grey-medium;
+        cursor: pointer;
+        margin-right: 5px;
+
+        &.active {
+          background-color: #DBF5F3;
+          color: $medigo-green-dark;
+          border: 1px solid #DBF5F3;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.box-list-hospital {
+  background-color: $medigo-grey-ligth;
+  height: 100%;
+  display: block;
+  padding: 15px;
+  font-family: $font-poppins;
+
+  &__list {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background-color: $medigo-white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    @extend .inh-box-shadow;
+
+    .info-header {
+      display: inline-block;
+      width: 100%;
+
+      &__title {
+        font-size: 14px;
+        font-weight: 600;
+        color: $medigo-green-dark;
+        line-height: 30px;
+      }
+
+      &__subtitle {
+        font-size: 12px;
+        font-weight: 300;
+        color: $medigo-grey-dark;
+      }
+
+      &__rating {
+        span {
+          font-size: 14px;
+          color: $medigo-grey-dark;
+
+          &.blue {
+            color: #027994;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .info-body {
+      display: inline-block;
+      width: 100%;
+
+      &__list-name {
+        display: inline-block;
+        width: 100%;
+        line-height: 25px;
+
+        .name {
+          color: $medigo-grey-dark;
+          font-size: 10px;
+
+          .icon {
+            // color: #c8c8c8;
+            margin-right: 10px;
+            width: 10px;
+          }
+        }
+      }
+    }
+
+    .info-gallery {
+      display: inline-block;
+      width: 100%;
+      margin-top: 10px;
+
+      ul {
+        padding-left: 0;
+
+        li {
+          float: left;
+          list-style-type: none;
+          margin-right: 5px;
+          width: 23%;
+
+          .image {
+            border-radius: 2px;
+            overflow: hidden;
+            width: 65px;
+            height: 65px;
+            border: 1px solid #e6e6e6;
+
+            img {
+              display: block;
+              width: auto;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

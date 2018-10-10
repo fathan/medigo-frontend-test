@@ -1,18 +1,20 @@
 <template>
   <div class="home-page">
     <div class="home-page__logo"></div>
-    <section class="home-page__information-top">
-      <div class="title">Salam Sehat!</div>
-      <div class="subtitle">Jangan lupa minum air putih delapan gelas setiap hari agar Anda terhindar dari dehidrasi.</div>
-    </section>
+    <information-top-home></information-top-home>
     <list-box-search-home :data="listBox"></list-box-search-home>
   </div>
 </template>
 
 <script>
+import InformationTopHome from '@/components/InformationTopHome'
 import ListBoxSearchHome from '@/components/ListBoxSearchHome'
 
 export default {
+  components: {
+    InformationTopHome,
+    ListBoxSearchHome
+  },
   data () {
     return {
       listBox: [
@@ -25,16 +27,13 @@ export default {
         },
         {
           id: 2,
-          image: require(`@/assets/icon-cari-dokter.png`),
-          title: 'Cari dokter',
-          subtitle: 'Dokter umum dan spesialis',
-          link: '/'
+          image: require(`@/assets/icon-pusat-kesehatan.png`),
+          title: 'Pusat Kesehatan',
+          subtitle: 'Rumah sakit dan klinik',
+          link: '/hospital'
         }
       ]
     }
-  },
-  components: {
-    ListBoxSearchHome
   }
 }
 </script>
