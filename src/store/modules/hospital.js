@@ -42,7 +42,6 @@ const actions = {
     axios.get(`${ENV.API_URL}/health-center?page=${page}`, options)
       .then(
         response => {
-          console.log(response)
           commit(mutationType.HOSPITALS, response.data)
         }
       )
@@ -68,7 +67,6 @@ const actions = {
     axios.get(`${ENV.API_URL}/health-center?search=${keyword}&page=${page}`, options)
       .then(
         response => {
-          console.log(response)
           commit(mutationType.HOSPITAL_SEARCH_RESULT, response.data)
         }
       )
@@ -92,7 +90,6 @@ const actions = {
     axios.get(`${ENV.API_URL}/health-center/${id}`, options)
       .then(
         response => {
-          console.log(response)
           commit(mutationType.HOSPITAL, response.data)
         }
       )
