@@ -36,7 +36,7 @@ const actions = {
       }
       const page = 1
 
-      axios.get(`${ENV}/health-center?page=${page}`, options)
+      axios.get(`${ENV.API_URL}/health-center?page=${page}`, options)
         .then(
           response => resolve(response)
         )
@@ -55,7 +55,7 @@ const actions = {
       const page = 1
       const keyword = 'Panti'
 
-      axios.get(`${ENV}/health-center?search=${keyword}&page=${page}`, options)
+      axios.get(`${ENV.API_URL}/health-center?search=${keyword}&page=${page}`, options)
         .then(
           response => resolve(response)
         )
@@ -72,7 +72,7 @@ const actions = {
         }
       }
       const id = 1
-      axios.get(`${ENV}/health-center/${id}`, options)
+      axios.get(`${ENV.API_URL}/health-center/${id}`, options)
         .then(
           response => resolve(response)
         )
