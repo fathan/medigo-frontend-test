@@ -6,6 +6,7 @@ import './registerServiceWorker'
 
 import './plugins/vue-bootstrap'
 import './plugins/vue-fontawesome'
+import './plugins/vue-google-maps'
 
 Vue.config.productionTip = false
 
