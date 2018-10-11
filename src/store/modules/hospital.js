@@ -32,7 +32,7 @@ const actions = {
    * @description : Get All Hospital List
    */
   _xhrHospitalList ({ commit }) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const options = {
         headers: {
           'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ const actions = {
    * @description : Get All Hospital List By Keyword Searching
    */
   _xhrHospitalSearch ({ commit }, data) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const options = {
         headers: {
           'Content-Type': 'application/json'
@@ -87,23 +87,26 @@ const actions = {
    * @description : Get Detail Hospital Order By ID
    */
   _xhrHospitalDetail ({ commit }, data) {
-    const options = {
-      headers: {
-        'Content-Type': 'application/json'
+    return new Promise((resolve) => {
+      const options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }
-    }
-    const id = data
-    axios.get(`${ENV.API_URL}/health-center/${id}`, options)
-      .then(
-        response => {
-          commit(mutationType.HOSPITAL, response.data)
-        }
-      )
-      .catch(
-        error => {
-          console.log(error)
-        }
-      )
+      const id = data
+      axios.get(`${ENV.API_URL}/health-center/${id}`, options)
+        .then(
+          response => {
+            resolve(response)
+            commit(mutationType.HOSPITAL, response.data)
+          }
+        )
+        .catch(
+          error => {
+            console.log(error)
+          }
+        )
+    })
   }
 }
 
