@@ -1,5 +1,8 @@
 <template>
   <div class="box-list-hospital">
+    <div class="box-list-hospital__list-empty" v-if="hospitals.length === 0">
+      Maaf data yang anda cari tidak ditemukan
+    </div>
     <div
       class="box-list-hospital__list"
       v-for="h in hospitals"

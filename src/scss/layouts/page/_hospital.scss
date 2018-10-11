@@ -118,6 +118,14 @@
   padding: 15px;
   font-family: $font-poppins;
 
+  &__list-empty {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: $medigo-grey-ligth;
+    margin-top: 50px;
+  }
+
   &__list {
     display: inline-block;
     width: 100%;

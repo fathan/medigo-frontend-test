@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.947332a26b294f549b8231614373b8fc.js"
+  "/precache-manifest.f8d8a809c37a1baf25b98c6eab0dd7d0.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "medigo-frontend-test"});
