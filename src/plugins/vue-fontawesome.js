@@ -8,6 +8,9 @@ import {
   faStar,
   faPhone,
   faClock,
+  faHospital,
+  faArrowRight,
+  faImage,
   faMapMarker
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -17,5 +20,8 @@ library.add(faStar)
 library.add(faPhone)
 library.add(faClock)
 library.add(faMapMarker)
+library.add(faHospital)
+library.add(faImage)
+library.add(faArrowRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
