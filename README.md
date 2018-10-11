@@ -22,7 +22,7 @@ npm run lint
 
 
 # Demo here
-for demo you can open the following demo link: [Demo Medigo Mobile Web App](https://medigo-frontend-test.fathanrohman.com/).
+for demo you can open the following demo link: [Demo Medigo Mobile Web App](http://medigo-frontend-test.fathanrohman.com/).
 ##
 ##
 ##
