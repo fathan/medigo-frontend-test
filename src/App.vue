@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-@import '@/scss/index.scss';
+@import "@/scss/index.scss";
 
 #app {
   height: 100%;
